@@ -23,7 +23,8 @@ public class Controller implements Initializable {
     int pj = 1;
     boolean jugar = false;
     boolean jugarvsc = false;
-    boolean maquina = false;
+    boolean win = false;
+    int maquina = 0;
     String mododejuego = "pvp";
     String jugadorX ="";
     String jugadorO ="";
@@ -71,10 +72,13 @@ public class Controller implements Initializable {
             if (b.getText().equals(" ")) {
                 if (pj == 1) {
                     b.setText("X");
+                    turnode.setText("Turno de O "+jugadorO);
+
                     pj++;
                     ganador();
                 } else{
                     b.setText("O");
+                    turnode.setText("Turno de X "+jugadorX);
                     pj--;
                     ganador();
                 }
@@ -113,7 +117,15 @@ public class Controller implements Initializable {
         bocho.setText(" ");
         bnueve.setText(" ");
         empate = 0;
-        pj = (int) (Math.random() * 1)+1;
+        maquina = 0;
+        win = false;
+        pj = (int) (Math.random() * 2)+1;
+
+        if (pj == 1){
+            turnode.setText("Turno de X "+jugadorX);
+        }else {
+            turnode.setText("Turno de O "+jugadorO);
+        }
 
 
         switch (mododejuego){
@@ -126,10 +138,11 @@ public class Controller implements Initializable {
                 jugarvsc = true;
                 break;
             case "cvc":
-                jugarvsc = true;
-                cpualone();
+                    cpualone();
+
                 break;
         }
+
 
 
     }
@@ -155,6 +168,8 @@ public class Controller implements Initializable {
             ganador.show();
             jugar = false;
             jugarvsc =false;
+            maquina = 9;
+            win = true;
             turnode.setText(" ");
             empate = 0;
         }
@@ -177,6 +192,8 @@ public class Controller implements Initializable {
             ganador.show();
             jugar = false;
             jugarvsc =false;
+            maquina = 9;
+            win = true;
             turnode.setText(" ");
             empate = 0;
 
@@ -200,6 +217,8 @@ public class Controller implements Initializable {
             ganador.show();
             jugar = false;
             jugarvsc =false;
+            maquina = 9;
+            win = true;
             turnode.setText(" ");
             empate = 0;
         }
@@ -208,7 +227,7 @@ public class Controller implements Initializable {
                 || bdos.getText().equals("O") && bcinco.getText().equals("O") && bocho.getText().equals("O") ){
             Alert ganador = new Alert(Alert.AlertType.INFORMATION);
             ganador.setTitle("¡Hay un ganador!");
-            ganador.setHeaderText("Enhorabuena el jugador "+ buno.getText()+" ha ganado");
+            ganador.setHeaderText("Enhorabuena el jugador "+ bdos.getText()+" ha ganado");
             if (bdos.getText().equals("X")) {
                 ganador.setContentText("Gana "+jugadorX+ " vs "+jugadorO+" Pierde");
                 resultados.add("Gana "+jugadorX+ " X vs O "+jugadorO+" Pierde");
@@ -222,6 +241,8 @@ public class Controller implements Initializable {
             ganador.show();
             jugar = false;
             jugarvsc =false;
+            maquina = 9;
+            win = true;
             turnode.setText(" ");
             empate = 0;
         }
@@ -230,7 +251,7 @@ public class Controller implements Initializable {
                 || btres.getText().equals("O") && bseis.getText().equals("O") && bnueve.getText().equals("O") ){
             Alert ganador = new Alert(Alert.AlertType.INFORMATION);
             ganador.setTitle("¡Hay un ganador!");
-            ganador.setHeaderText("Enhorabuena el jugador "+ buno.getText()+" ha ganado");
+            ganador.setHeaderText("Enhorabuena el jugador "+ btres.getText()+" ha ganado");
             if (btres.getText().equals("X")) {
                 ganador.setContentText("Gana "+jugadorX+ " vs "+jugadorO+" Pierde");
                 resultados.add("Gana "+jugadorX+ " X vs O "+jugadorO+" Pierde");
@@ -244,6 +265,8 @@ public class Controller implements Initializable {
             ganador.show();
             jugar = false;
             jugarvsc =false;
+            maquina = 9;
+            win = true;
             turnode.setText(" ");
             empate = 0;
         }
@@ -252,7 +275,7 @@ public class Controller implements Initializable {
                 || bcuatro.getText().equals("O") && bcinco.getText().equals("O") && bseis.getText().equals("O") ){
             Alert ganador = new Alert(Alert.AlertType.INFORMATION);
             ganador.setTitle("¡Hay un ganador!");
-            ganador.setHeaderText("Enhorabuena el jugador "+ buno.getText()+" ha ganado");
+            ganador.setHeaderText("Enhorabuena el jugador "+ bcinco.getText()+" ha ganado");
             if (bcuatro.getText().equals("X")) {
                 ganador.setContentText("Gana "+jugadorX+ " vs "+jugadorO+" Pierde");
                 resultados.add("Gana "+jugadorX+ " X vs O "+jugadorO+" Pierde");
@@ -266,6 +289,8 @@ public class Controller implements Initializable {
             ganador.show();
             jugar = false;
             jugarvsc =false;
+            maquina = 9;
+            win = true;
             turnode.setText(" ");
             empate = 0;
         }
@@ -273,7 +298,7 @@ public class Controller implements Initializable {
                 || btres.getText().equals("O") && bcinco.getText().equals("O") && bsiete.getText().equals("O") ){
             Alert ganador = new Alert(Alert.AlertType.INFORMATION);
             ganador.setTitle("¡Hay un ganador!");
-            ganador.setHeaderText("Enhorabuena el jugador "+ buno.getText()+" ha ganado");
+            ganador.setHeaderText("Enhorabuena el jugador "+ btres.getText()+" ha ganado");
             if (bcuatro.getText().equals("X")) {
                 ganador.setContentText("Gana "+jugadorX+ " vs "+jugadorO+" Pierde");
                 resultados.add("Gana "+jugadorX+ " X vs O "+jugadorO+" Pierde");
@@ -287,6 +312,8 @@ public class Controller implements Initializable {
             ganador.show();
             jugar = false;
             jugarvsc =false;
+            maquina = 9;
+            win = true;
             turnode.setText(" ");
             empate = 0;
         }
@@ -295,7 +322,7 @@ public class Controller implements Initializable {
                 || bsiete.getText().equals("O") && bocho.getText().equals("O") && bnueve.getText().equals("O") ){
             Alert ganador = new Alert(Alert.AlertType.INFORMATION);
             ganador.setTitle("¡Hay un ganador!");
-            ganador.setHeaderText("Enhorabuena el jugador "+ buno.getText()+" ha ganado");
+            ganador.setHeaderText("Enhorabuena el jugador "+ bsiete.getText()+" ha ganado");
             if (bsiete.getText().equals("X")) {
                 ganador.setContentText("Gana "+jugadorX+ " vs "+jugadorO+" Pierde");
                 resultados.add("Gana "+jugadorX+ " X vs O "+jugadorO+" Pierde");
@@ -309,6 +336,8 @@ public class Controller implements Initializable {
             ganador.show();
             jugar = false;
             jugarvsc =false;
+            maquina = 9;
+            win = true;
             turnode.setText(" ");
             empate = 0;
         }
@@ -323,6 +352,8 @@ public class Controller implements Initializable {
             res.setItems(resultados);
             jugar = false;
             jugarvsc =false;
+            maquina = 9;
+            win = true;
             turnode.setText(" ");
         }
     }
@@ -331,16 +362,18 @@ public class Controller implements Initializable {
         int opcion = 0;
         boolean movido = false;
         while (!movido) {
-            opcion = (int) (Math.random() * 8);
+            opcion = (int) (Math.random() * 9);
             switch (opcion) {
                 case 0:
                     if (buno.getText().equals(" ")) {
                         if (pj == 1) {
                             buno.setText("X");
+                            turnode.setText("Turno de O "+jugadorO);
                             pj++;
                             movido = true;
                         } else {
                             buno.setText("O");
+                            turnode.setText("Turno de X "+jugadorX);
                             pj--;
                             movido = true;
                         }
@@ -350,10 +383,12 @@ public class Controller implements Initializable {
                     if (bdos.getText().equals(" ")) {
                         if (pj == 1) {
                             bdos.setText("X");
+                            turnode.setText("Turno de O "+jugadorO);
                             pj++;
                             movido = true;
                         } else {
                             bdos.setText("O");
+                            turnode.setText("Turno de X "+jugadorX);
                             pj--;
                             movido = true;
                         }
@@ -363,11 +398,13 @@ public class Controller implements Initializable {
                     if (btres.getText().equals(" ")) {
                         if (pj == 1) {
                             btres.setText("X");
+                            turnode.setText("Turno de O "+jugadorO);
                             pj++;
                             movido = true;
                         } else {
                             btres.setText("O");
                             pj--;
+                            turnode.setText("Turno de X "+jugadorX);
                             movido = true;
                         }
                     }
@@ -376,11 +413,13 @@ public class Controller implements Initializable {
                     if (bcuatro.getText().equals(" ")) {
                         if (pj == 1) {
                             bcuatro.setText("X");
+                            turnode.setText("Turno de O "+jugadorO);
                             pj++;
                             movido = true;
                         } else {
                             bcuatro.setText("O");
                             pj--;
+                            turnode.setText("Turno de X "+jugadorX);
                             movido = true;
                         }
                     }
@@ -389,10 +428,12 @@ public class Controller implements Initializable {
                     if (bcinco.getText().equals(" ")) {
                         if (pj == 1) {
                             bcinco.setText("X");
+                            turnode.setText("Turno de O "+jugadorO);
                             pj++;
                             movido = true;
                         } else {
                             bcinco.setText("O");
+                            turnode.setText("Turno de X "+jugadorX);
                             pj--;
                             movido = true;
                         }
@@ -402,11 +443,13 @@ public class Controller implements Initializable {
                     if (bseis.getText().equals(" ")) {
                         if (pj == 1) {
                             bseis.setText("X");
+                            turnode.setText("Turno de O "+jugadorO);
                             pj++;
                             movido = true;
                         } else {
                             bseis.setText("O");
                             pj--;
+                            turnode.setText("Turno de X "+jugadorX);
                             movido = true;
                         }
                     }
@@ -415,10 +458,12 @@ public class Controller implements Initializable {
                     if (bsiete.getText().equals(" ")) {
                         if (pj == 1) {
                             bsiete.setText("X");
+                            turnode.setText("Turno de O "+jugadorO);
                             pj++;
                             movido = true;
                         } else {
                             bsiete.setText("O");
+                            turnode.setText("Turno de X "+jugadorX);
                             pj--;
                             movido = true;
                         }
@@ -428,10 +473,12 @@ public class Controller implements Initializable {
                     if (bocho.getText().equals(" ")) {
                         if (pj == 1) {
                             bocho.setText("X");
+                            turnode.setText("Turno de O "+jugadorO);
                             pj++;
                             movido = true;
                         } else {
                             bocho.setText("O");
+                            turnode.setText("Turno de X "+jugadorX);
                             pj--;
                             movido = true;
                         }
@@ -441,21 +488,25 @@ public class Controller implements Initializable {
                     if (bnueve.getText().equals(" ")) {
                         if (pj == 1) {
                             bnueve.setText("X");
+                            turnode.setText("Turno de O "+jugadorO);
                             pj++;
                             movido = true;
                         } else {
                             bnueve.setText("O");
+                            turnode.setText("Turno de X "+jugadorX);
                             pj--;
                             movido = true;
                         }
                     }
+
+
                     break;
             }
         }
     }
 
     public void cpualone() {
-        if (jugarvsc) {
+        if (!win) {
             Timeline twoSecondsWonder = new Timeline(new KeyFrame(Duration.seconds(2), new EventHandler <ActionEvent>() {
 
                 @Override
@@ -463,11 +514,16 @@ public class Controller implements Initializable {
 
                     jugadacpu();
                     ganador();
-
+                    if (!win) {
+                        cpualone();
+                    }
                 }
             }));
+
             twoSecondsWonder.play();
+
         }
+
     }
 
     @Override
