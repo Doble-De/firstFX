@@ -25,6 +25,8 @@ public class Controller implements Initializable {
     boolean jugarvsc = false;
     boolean win = false;
     int maquina = 0;
+    int contO = 0;
+    int contX = 0;
     String mododejuego = "pvp";
     String jugadorX ="";
     String jugadorO ="";
@@ -156,10 +158,12 @@ public class Controller implements Initializable {
             ganador.setTitle("¡Hay un ganador!");
             ganador.setHeaderText("Enhorabuena el jugador "+ buno.getText()+" ha ganado");
             if (buno.getText().equals("X")) {
+                contX++;
                 ganador.setContentText("Gana "+jugadorX+ " vs "+jugadorO+" Pierde");
                 resultados.add("Gana "+jugadorX+ " X vs O "+jugadorO+" Pierde");
                 res.setItems(resultados);
             }else {
+                contO++;
                 ganador.setContentText("Gana "+jugadorO+ " vs "+jugadorX+" Pierde");
                 resultados.add("Gana "+jugadorO+ " O vs X "+jugadorX+" Pierde");
                 res.setItems(resultados);
@@ -170,7 +174,7 @@ public class Controller implements Initializable {
             jugarvsc =false;
             maquina = 9;
             win = true;
-            turnode.setText(" ");
+            turnode.setText("Victorias: X "+contX+ " O " +contO);
             empate = 0;
         }
 
@@ -183,10 +187,12 @@ public class Controller implements Initializable {
                 ganador.setContentText("Gana "+jugadorX+ " vs "+jugadorO+" Pierde");
                 resultados.add("Gana "+jugadorX+ " X vs O "+jugadorO+" Pierde");
                 res.setItems(resultados);
+                contX++;
             }else {
                 ganador.setContentText("Gana "+jugadorO+ " vs "+jugadorX+" Pierde");
                 resultados.add("Gana "+jugadorO+ " O vs X "+jugadorX+" Pierde");
                 res.setItems(resultados);
+                contO++;
             }
             ganador.initStyle(StageStyle.UTILITY);
             ganador.show();
@@ -194,7 +200,7 @@ public class Controller implements Initializable {
             jugarvsc =false;
             maquina = 9;
             win = true;
-            turnode.setText(" ");
+            turnode.setText("Victorias: X "+contX+ " O " +contO);
             empate = 0;
 
         }
@@ -208,10 +214,12 @@ public class Controller implements Initializable {
                 ganador.setContentText("Gana "+jugadorX+ " vs "+jugadorO+" Pierde");
                 resultados.add("Gana "+jugadorX+ " X vs O "+jugadorO+" Pierde");
                 res.setItems(resultados);
+                contX++;
             }else {
                 ganador.setContentText("Gana "+jugadorO+ " vs "+jugadorX+" Pierde");
                 resultados.add("Gana "+jugadorO+ " O vs X "+jugadorX+" Pierde");
                 res.setItems(resultados);
+                contO++;
             }
             ganador.initStyle(StageStyle.UTILITY);
             ganador.show();
@@ -219,7 +227,7 @@ public class Controller implements Initializable {
             jugarvsc =false;
             maquina = 9;
             win = true;
-            turnode.setText(" ");
+            turnode.setText("Victorias: X "+contX+ " O " +contO);
             empate = 0;
         }
 
@@ -232,10 +240,12 @@ public class Controller implements Initializable {
                 ganador.setContentText("Gana "+jugadorX+ " vs "+jugadorO+" Pierde");
                 resultados.add("Gana "+jugadorX+ " X vs O "+jugadorO+" Pierde");
                 res.setItems(resultados);
+                contX++;
             }else {
                 ganador.setContentText("Gana "+jugadorO+ " vs "+jugadorX+" Pierde");
                 resultados.add("Gana "+jugadorO+ " O vs X "+jugadorX+" Pierde");
                 res.setItems(resultados);
+                contO++;
             }
             ganador.initStyle(StageStyle.UTILITY);
             ganador.show();
@@ -243,7 +253,7 @@ public class Controller implements Initializable {
             jugarvsc =false;
             maquina = 9;
             win = true;
-            turnode.setText(" ");
+            turnode.setText("Victorias: X "+contX+ " O " +contO);
             empate = 0;
         }
 
@@ -256,10 +266,12 @@ public class Controller implements Initializable {
                 ganador.setContentText("Gana "+jugadorX+ " vs "+jugadorO+" Pierde");
                 resultados.add("Gana "+jugadorX+ " X vs O "+jugadorO+" Pierde");
                 res.setItems(resultados);
+                contX++;
             }else {
                 ganador.setContentText("Gana "+jugadorO+ " vs "+jugadorX+" Pierde");
                 resultados.add("Gana "+jugadorO+ " O vs X "+jugadorX+" Pierde");
                 res.setItems(resultados);
+                contO++;
             }
             ganador.initStyle(StageStyle.UTILITY);
             ganador.show();
@@ -267,7 +279,7 @@ public class Controller implements Initializable {
             jugarvsc =false;
             maquina = 9;
             win = true;
-            turnode.setText(" ");
+            turnode.setText("Victorias: X "+contX+ " O " +contO);
             empate = 0;
         }
 
@@ -280,10 +292,12 @@ public class Controller implements Initializable {
                 ganador.setContentText("Gana "+jugadorX+ " vs "+jugadorO+" Pierde");
                 resultados.add("Gana "+jugadorX+ " X vs O "+jugadorO+" Pierde");
                 res.setItems(resultados);
+                contX++;
             }else {
                 ganador.setContentText("Gana "+jugadorO+ " vs "+jugadorX+" Pierde");
                 resultados.add("Gana "+jugadorO+ " O vs X "+jugadorX+" Pierde");
                 res.setItems(resultados);
+                contO++;
             }
             ganador.initStyle(StageStyle.UTILITY);
             ganador.show();
@@ -291,7 +305,7 @@ public class Controller implements Initializable {
             jugarvsc =false;
             maquina = 9;
             win = true;
-            turnode.setText(" ");
+            turnode.setText("Victorias: X "+contX+ " O " +contO);
             empate = 0;
         }
         else if (btres.getText().equals("X") && bcinco.getText().equals("X") && bsiete.getText().equals("X")
@@ -303,10 +317,12 @@ public class Controller implements Initializable {
                 ganador.setContentText("Gana "+jugadorX+ " vs "+jugadorO+" Pierde");
                 resultados.add("Gana "+jugadorX+ " X vs O "+jugadorO+" Pierde");
                 res.setItems(resultados);
+                contX++;
             }else {
                 ganador.setContentText("Gana "+jugadorO+ " vs "+jugadorX+" Pierde");
                 resultados.add("Gana "+jugadorO+ " O vs X "+jugadorX+" Pierde");
                 res.setItems(resultados);
+                contO++;
             }
             ganador.initStyle(StageStyle.UTILITY);
             ganador.show();
@@ -314,7 +330,7 @@ public class Controller implements Initializable {
             jugarvsc =false;
             maquina = 9;
             win = true;
-            turnode.setText(" ");
+            turnode.setText("Victorias: X "+contX+ " O " +contO);
             empate = 0;
         }
 
@@ -327,10 +343,12 @@ public class Controller implements Initializable {
                 ganador.setContentText("Gana "+jugadorX+ " vs "+jugadorO+" Pierde");
                 resultados.add("Gana "+jugadorX+ " X vs O "+jugadorO+" Pierde");
                 res.setItems(resultados);
+                contX++;
             }else {
                 ganador.setContentText("Gana "+jugadorO+ " vs "+jugadorX+" Pierde");
                 resultados.add("Gana "+jugadorO+ " O vs X "+jugadorX+" Pierde");
                 res.setItems(resultados);
+                contO++;
             }
             ganador.initStyle(StageStyle.UTILITY);
             ganador.show();
@@ -338,7 +356,7 @@ public class Controller implements Initializable {
             jugarvsc =false;
             maquina = 9;
             win = true;
-            turnode.setText(" ");
+            turnode.setText("Victorias: X "+contX+ " O " +contO);
             empate = 0;
         }
 
